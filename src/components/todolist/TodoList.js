@@ -1,14 +1,19 @@
 import React from "react";
-import TodoListItem from "./TodoListItem";
+import styled from "styled-components";
+import TodoItem from "./TodoItem";
 
-const TodoList = ({todos}) => {
- return (
-     <div className="TodoList">
-         {todos.map(todo => (
-             <TodoListItem todo={todo} key={todo.id}/>
-         ))}
-     </div>
- )
+const TodoListBox = styled.div``;
+
+function TodoList({ users, onRemove, onToggle }) {
+  return (
+    <>
+      {users.map((user) => (
+        <TodoListBox key={user.id}>
+          <TodoItem user={user} onRemove={onRemove} onToggle={onToggle} />
+        </TodoListBox>
+      ))}
+    </>
+  );
 }
 
 export default TodoList;
