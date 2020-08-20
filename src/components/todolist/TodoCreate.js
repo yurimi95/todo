@@ -23,15 +23,15 @@ const AddBtn = styled.button`
   outline: none;
 `;
 
-const TodoCreate = ({ text, onChange, onCreate }) => {
+const TodoCreate = ({ title, onChange, onCreate }) => {
   return (
     <>
       <TodoInput
         type="text"
         placeholder="Add task"
-        name="text"
+        name="title"
         onChange={onChange}
-        value={text}
+        value={title}
       />
       <AddBtn onClick={onCreate}>Add</AddBtn>
     </>
